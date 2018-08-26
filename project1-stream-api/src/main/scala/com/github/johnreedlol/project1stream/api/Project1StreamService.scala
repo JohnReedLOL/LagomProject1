@@ -12,6 +12,11 @@ import com.lightbend.lagom.scaladsl.api.{Descriptor, Service, ServiceCall}
   */
 trait Project1StreamService extends Service {
 
+  /**
+    * A streamed message is a message of type Source. Source is an Akka streams API
+    * that allows asynchronous streaming and handling of messages.
+    * This uses WebSockets under the hood.
+    */
   def stream: ServiceCall[Source[String, NotUsed], Source[String, NotUsed]]
 
   override final def descriptor: Descriptor = {

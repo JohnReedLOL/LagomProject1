@@ -51,5 +51,7 @@ lazy val `project1-stream-impl` = (project in file("project1-stream-impl"))
 
 // https://stackoverflow.com/questions/15624236/is-there-a-way-in-sbt-to-convert-compiler-warnings-to-errors-so-the-build-fails
 // scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Xfatal-warnings")
-
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Xlint", "-Ywarn-inaccessible", "-Ywarn-nullary-override", "-Ywarn-nullary-unit", "-Xfatal-warnings")
+
+// Turn on all checks that are currently considered stable:
+wartremoverErrors ++= Warts.unsafe
